@@ -1,22 +1,4 @@
-# CraftsVilla
-
-## Description
-
-## Features
-
-## Technologies Used
-
-## Installation
-
-## Usage
-
-## Project Structure
-
-## Contributing
-
-## License
-
-## Contact # CRAFTSVILLA Front-End Utviklingsoppgave
+# CRAFTSVILLA Front-End Utviklingsoppgave
 
 ## Oversikt
 
