@@ -1,0 +1,362 @@
+/* Variables */
+:root {
+  /* Colors */
+  --primary: #e8a87c; /* Warm terracotta */
+  --secondary: #41436a; /* Deep blue-gray */
+  --accent: #984447; /* Deep rose */
+  --text: #333333;
+  --background: #f5f5f5;
+  --max-width: 1400px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Typography */
+body {
+  font-family: "Lato", sans-serif;
+  color: var(--text);
+  background-color: var(--background);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 24px;
+}
+
+/* Layout */
+main {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header & Navigation */
+header {
+  background-color: var(--secondary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Option 1: Simple circle with text */
+.logo {
+  background-color: var(--primary);
+  color: var(--secondary);
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.logo:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Media Query for mobile navigation */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+}
+
+/* Update main container to allow full-width sections */
+main {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--secondary);
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 8rem 2rem;
+  width: 100%;
+}
+
+/* Add a container for the hero content */
+.hero-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+}
+
+.hero .catchphrase {
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.cta-button,
+.book-button,
+button.book-button {
+  /* This targets both <a> and <button> elements */
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: var(--primary);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Add pointer cursor for buttons */
+}
+
+.cta-button:hover,
+.book-button:hover,
+button.book-button:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+/* Activities section needs container */
+.activities {
+  max-width: var(--max-width);
+  margin: 3rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.activity-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activity-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.activity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.activity-image:hover img {
+  transform: scale(1.05);
+}
+
+.activity-card h3 {
+  margin-bottom: 1rem;
+}
+
+.activity-card .price {
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .activities {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.kit-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kit-list li {
+  padding: 0.3rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  width: fit-content;
+}
+
+.kit-list li::before {
+  content: "•";
+  color: var(--primary);
+  position: absolute;
+  left: 0.5rem;
+}
+
+/* Services Page */
+.services-hero {
+  background-color: var(--secondary);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.services-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Booking Section */
+.booking-section {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.booking-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.booking-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.booking-step {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.booking-step h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Form Elements */
+.booking-step input,
+.booking-step select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.booking-step input:last-child {
+  margin-bottom: 0;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--primary);
+  color: var(--text);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .booking-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-steps {
+    grid-template-columns: 1fr;
+  }
+}
