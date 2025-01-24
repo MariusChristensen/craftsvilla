@@ -45,7 +45,12 @@
               <li>Small colored stones</li>
               <li>Rubber</li>
             </ul>
-            <button class="book-button">Book Now</button>
+            <button
+              class="book-button"
+              onclick="window.location.href='#booking'"
+            >
+              Book Now
+            </button>
           </div>
           <div class="activity-card">
             <div class="activity-image">
@@ -63,7 +68,12 @@
               <li>Watercolors</li>
               <li>Brushes</li>
             </ul>
-            <button class="book-button">Book Now</button>
+            <button
+              class="book-button"
+              onclick="window.location.href='#booking'"
+            >
+              Book Now
+            </button>
           </div>
           <div class="activity-card">
             <div class="activity-image">
@@ -81,42 +91,114 @@
               <li>Acrylic colors</li>
               <li>Brushes</li>
             </ul>
-            <button class="book-button">Book Now</button>
+            <button
+              class="book-button"
+              onclick="window.location.href='#booking'"
+            >
+              Book Now
+            </button>
           </div>
         </div>
-        <div class="booking-section">
+        <section class="booking-section" id="booking">
           <h2>Booking</h2>
-          <div class="booking-steps">
-            <div class="booking-step">
-              <h3>Choose Workshop</h3>
-              <select id="workshop-select">
-                <option value="">Select Workshop</option>
-                <option value="mosaic">Mosaic Art</option>
-                <option value="watercolor">Watercolor Painting</option>
-                <option value="canvas">Canvas Painting</option>
-              </select>
+
+          <div class="booking-container">
+            <!-- Progress Indicator -->
+            <div class="booking-progress">
+              <div class="progress-step active">Workshop</div>
+              <div class="progress-step">Schedule</div>
+              <div class="progress-step">Details</div>
+              <div class="progress-step">Confirm</div>
             </div>
-            <div class="booking-step">
-              <h3>Pick a Date</h3>
-              <input type="date" id="date" />
+
+            <!-- Step 1: Workshop Selection -->
+            <div class="booking-step active" id="step-1">
+              <h3>Choose Your Workshop</h3>
+              <div class="workshop-select">
+                <select id="workshop" required>
+                  <option value="" disabled selected>Select Workshop</option>
+                  <option value="mosaic">Mosaic Art</option>
+                  <option value="watercolor">Watercolor Painting</option>
+                  <option value="canvas">Canvas Painting</option>
+                </select>
+              </div>
+              <div class="step-buttons">
+                <button class="btn-next">Continue</button>
+              </div>
             </div>
-            <div class="booking-step">
+
+            <!-- Step 2: Date & Time -->
+            <div class="booking-step" id="step-2">
+              <h3>Select Date & Time</h3>
+              <div class="datetime-select">
+                <div class="input-group">
+                  <label for="booking-date">Date</label>
+                  <input type="date" id="booking-date" required />
+                </div>
+                <div class="input-group">
+                  <label for="booking-time">Time</label>
+                  <select id="booking-time" required>
+                    <option value="" disabled selected>Select Time</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                  </select>
+                </div>
+              </div>
+              <div class="step-buttons">
+                <button class="btn-back">Back</button>
+                <button class="btn-next">Continue</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Personal Details -->
+            <div class="booking-step" id="step-3">
               <h3>Your Details</h3>
-              <input type="text" placeholder="Full Name" />
-              <input type="email" placeholder="Email" />
-              <input type="tel" placeholder="Number" />
+              <div class="details-form">
+                <input
+                  type="text"
+                  id="fullname"
+                  placeholder="Full Name"
+                  required
+                />
+                <input type="email" id="email" placeholder="Email" required />
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="Phone Number"
+                  required
+                />
+              </div>
+              <div class="step-buttons">
+                <button class="btn-back">Back</button>
+                <button class="btn-next">Continue</button>
+              </div>
             </div>
-            <div class="booking-step">
-              <h3>Confirmation</h3>
-              <p>Please review your booking details before confirming.</p>
-              <button class="submit-button">Confirm Booking</button>
+
+            <!-- Step 4: Confirmation -->
+            <div class="booking-step" id="step-4">
+              <h3>Confirm Your Booking</h3>
+              <div class="booking-summary">
+                <!-- Will be populated by JavaScript -->
+              </div>
+              <div class="step-buttons">
+                <button class="btn-back">Back</button>
+                <button class="btn-confirm">Confirm Booking</button>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
       </section>
     </main>
     <footer>
       <p>© Marius Christensen</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

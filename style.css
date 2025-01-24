@@ -1,22 +1,28 @@
-/* Variables */
+/*====================
+    CSS Variables
+====================*/
 :root {
-  /* Colors */
-  --primary: #e8a87c; /* Warm terracotta */
-  --secondary: #41436a; /* Deep blue-gray */
-  --accent: #984447; /* Deep rose */
+  --primary: #e8a87c;
+  --secondary: #41436a;
+  --accent: #984447;
   --text: #333333;
   --background: #f5f5f5;
   --max-width: 1400px;
 }
 
-/* Reset */
+/*====================
+    Reset & Base
+====================*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base Typography */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Lato", sans-serif;
   color: var(--text);
@@ -24,6 +30,9 @@ body {
   line-height: 1.6;
 }
 
+/*====================
+    Typography
+====================*/
 h1,
 h2,
 h3 {
@@ -41,7 +50,9 @@ h3 {
   font-size: 24px;
 }
 
-/* Layout */
+/*====================
+    Layout
+====================*/
 main {
   max-width: 100%;
   margin: 0;
@@ -54,7 +65,9 @@ main {
   padding: 0 2rem;
 }
 
-/* Header & Navigation */
+/*====================
+    Header & Navigation
+====================*/
 header {
   background-color: var(--secondary);
   position: sticky;
@@ -71,7 +84,6 @@ nav {
   align-items: center;
 }
 
-/* Option 1: Simple circle with text */
 .logo {
   background-color: var(--primary);
   color: var(--secondary);
@@ -107,36 +119,9 @@ nav {
   color: var(--primary);
 }
 
-/* Media Query for mobile navigation */
-@media (max-width: 768px) {
-  nav {
-    padding: 1rem;
-  }
-
-  .nav-links {
-    gap: 1rem;
-  }
-
-  .nav-links a {
-    font-size: 12px;
-  }
-}
-
-/* Update main container to allow full-width sections */
-main {
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--secondary);
-  color: white;
-}
-
-/* Hero Section */
+/*====================
+    Hero Sections
+====================*/
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("./assets/images/hero-bg.jpg");
@@ -148,7 +133,6 @@ footer {
   width: 100%;
 }
 
-/* Add a container for the hero content */
 .hero-content {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -162,11 +146,19 @@ footer {
   margin-bottom: 2rem;
 }
 
-/* Buttons */
+.services-hero {
+  background-color: var(--secondary);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+/*====================
+    Buttons
+====================*/
 .cta-button,
 .book-button,
 button.book-button {
-  /* This targets both <a> and <button> elements */
   display: inline-block;
   padding: 0.8rem 2rem;
   background-color: var(--primary);
@@ -174,8 +166,8 @@ button.book-button {
   text-decoration: none;
   border-radius: 25px;
   transition: background-color 0.3s ease;
-  border: none; /* Remove default button border */
-  cursor: pointer; /* Add pointer cursor for buttons */
+  border: none;
+  cursor: pointer;
 }
 
 .cta-button:hover,
@@ -185,7 +177,41 @@ button.book-button:hover {
   color: white;
 }
 
-/* Activities section needs container */
+.btn-next,
+.btn-back,
+.btn-confirm {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-next,
+.btn-confirm {
+  background-color: var(--primary);
+  color: var(--text);
+}
+
+.btn-back {
+  background-color: #ddd;
+  color: var(--text);
+}
+
+.btn-next:hover,
+.btn-confirm:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+.btn-back:hover {
+  background-color: #ccc;
+}
+
+/*====================
+    Activities Section
+====================*/
 .activities {
   max-width: var(--max-width);
   margin: 3rem auto;
@@ -230,14 +256,9 @@ button.book-button:hover {
   margin: 1rem 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .activities {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-}
-
+/*====================
+    Kit List
+====================*/
 .kit-list {
   list-style: none;
   padding: 0;
@@ -262,14 +283,9 @@ button.book-button:hover {
   left: 0.5rem;
 }
 
-/* Services Page */
-.services-hero {
-  background-color: var(--secondary);
-  color: white;
-  text-align: center;
-  padding: 4rem 2rem;
-}
-
+/*====================
+    Services Section
+====================*/
 .services-container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -283,80 +299,210 @@ button.book-button:hover {
   margin-bottom: 4rem;
 }
 
-/* Booking Section */
+/*====================
+    Booking Section
+====================*/
 .booking-section {
-  background-color: #f8f8f8;
-  padding: 2rem;
-  border-radius: 8px;
+  max-width: var(--max-width);
+  margin: 4rem auto;
+  padding: 0 2rem;
 }
 
 .booking-section h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
-.booking-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+.booking-container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.booking-step {
+/* Progress Indicator */
+.booking-progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.booking-progress::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ddd;
+  z-index: 1;
+}
+
+.progress-step {
   background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: #666;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-step.active {
+  background: var(--primary);
+  color: var(--text);
+}
+
+/* Booking Steps */
+.booking-step {
+  display: none;
+  padding: 2rem 0;
+}
+
+.booking-step.active {
+  display: block;
 }
 
 .booking-step h3 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-/* Form Elements */
-.booking-step input,
-.booking-step select {
+#step-1 .step-buttons {
+  justify-content: flex-end;
+}
+
+.step-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+/*====================
+    Form Elements
+====================*/
+.workshop-select select,
+.datetime-select input,
+.datetime-select select,
+.details-form input {
   width: 100%;
-  padding: 0.8rem;
+  padding: 1rem;
   margin-bottom: 1rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: inherit;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 
-.booking-step input:last-child {
-  margin-bottom: 0;
+.datetime-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
-.submit-button {
-  width: 100%;
-  padding: 0.8rem;
-  background-color: var(--primary);
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
   color: var(--text);
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
 }
 
-.submit-button:hover {
-  background-color: var(--accent);
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:hover,
+.input-group select:hover {
+  border-color: var(--primary);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+}
+
+.input-group input[type="date"] {
+  position: relative;
+  cursor: pointer;
+}
+
+.input-group input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/*====================
+    Booking Summary
+====================*/
+.booking-summary {
+  background: var(--primary);
+  padding: 3rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.booking-summary h3 {
+  color: var(--text);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.booking-summary p {
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/*====================
+    Footer
+====================*/
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--secondary);
   color: white;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .booking-steps {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/*====================
+    Media Queries
+====================*/
 @media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+  nav {
+    padding: 1rem;
   }
 
-  .booking-steps {
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .activities {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
