@@ -12,29 +12,26 @@ function initializeBookingSystem() {
   };
 
   if (state.elements.bookingContainer) {
-    state.elements.bookingContainer.addEventListener("click", (e) =>
-      handleBookingEvents(e, state)
-    );
+    state.elements.bookingContainer.addEventListener("click", (e) => handleBookingEvents(e, state));
   }
 }
 
 function handleBookingEvents(e, state) {
   if (state.bookingConfirmed) return;
 
-  if (e.target.classList.contains("btn-next")) {
+  if (e.target.classList.contains("btn-primary") && !e.target.innerText.includes("Confirm")) {
     handleNextStep(state);
   }
-  if (e.target.classList.contains("btn-back")) {
+  if (e.target.classList.contains("btn-secondary")) {
     handleBackStep(state);
   }
-  if (e.target.classList.contains("btn-confirm")) {
+  if (e.target.classList.contains("btn-primary") && e.target.innerText.includes("Confirm")) {
     handleConfirmation(state);
   }
 }
 
 function handleNextStep(state) {
-  const currentInputs =
-    state.elements.steps[state.currentStep].querySelectorAll("input, select");
+  const currentInputs = state.elements.steps[state.currentStep].querySelectorAll("input, select");
 
   if (!validateInputs(currentInputs)) return;
 
@@ -51,16 +48,21 @@ function handleBackStep(state) {
 
 function handleConfirmation(state) {
   const summary = document.querySelector(".booking-summary");
+  const progressBar = document.querySelector(".booking-progress");
+  const bookingTitle = document.querySelector(".booking-section h2");
+  const stepTitle = document.querySelector("#step-4 h3");
   const name = document.getElementById("fullname").value;
 
   summary.innerHTML = `
-    <h3>Thank you for your booking!</h3>
-    <p>We look forward to seeing you, ${name}!</p>
-    <p>A confirmation email has been sent to your email address.</p>
+    <h3>Thank you for your booking, ${name}!</h3>
+    <p>We've sent a confirmation email with all the details.<br>Looking forward to seeing you!</p>
   `;
 
   const stepButtons = document.querySelector("#step-4 .step-buttons");
   stepButtons.style.display = "none";
+  progressBar.style.display = "none";
+  bookingTitle.style.display = "none";
+  stepTitle.style.display = "none";
   state.bookingConfirmed = true;
 }
 
