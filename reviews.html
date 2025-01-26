@@ -24,17 +24,137 @@
         </div>
       </nav>
     </header>
-
     <main>
       <section class="reviews-hero">
         <div class="hero-content">
           <h1>Customer Reviews</h1>
+          <p>See what our creative community has to say about their experiences</p>
         </div>
       </section>
-
-      <section class="reviews-container"></section>
+      <section class="reviews-container">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <h3>Sarah Johnson</h3>
+              <p class="workshop-type">Mosaic Art Workshop</p>
+            </div>
+          </div>
+          <div class="rating">★★★★★</div>
+          <p class="review-text">
+            "An amazing experience! The instructor was patient and helpful, and I created something I'm truly proud of.
+            Will definitely come back for more workshops!"
+          </p>
+          <p class="review-date">October 15, 2023</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <h3>Michael Chen</h3>
+              <p class="workshop-type">Watercolor Painting</p>
+            </div>
+          </div>
+          <div class="rating">★★★★☆</div>
+          <p class="review-text">
+            "Great introduction to watercolor painting. The class was well-structured, though I wish we had a bit more
+            time to practice techniques. Still, I learned a lot!"
+          </p>
+          <p class="review-date">October 12, 2023</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <h3>Emma Wilson</h3>
+              <p class="workshop-type">Canvas Painting</p>
+            </div>
+          </div>
+          <div class="rating">★★★★★</div>
+          <p class="review-text">
+            "A perfect weekend activity! The atmosphere was relaxing, and the guidance was excellent. I'm already
+            planning my next visit!"
+          </p>
+          <p class="review-date">October 5, 2023</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <h3>Thomas Berg</h3>
+              <p class="workshop-type">Mosaic Art Workshop</p>
+            </div>
+          </div>
+          <div class="rating">★★★☆☆</div>
+          <p class="review-text">
+            "Interesting concept and friendly staff. The materials were good quality, but as a beginner, I found it a
+            bit challenging to keep up. Would recommend for those with some artistic experience."
+          </p>
+          <p class="review-date">September 28, 2023</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <h3>Lisa Anderson</h3>
+              <p class="workshop-type">Canvas Painting</p>
+            </div>
+          </div>
+          <div class="rating">★★★★☆</div>
+          <p class="review-text">
+            "Really enjoyed the canvas painting workshop! The instructor made it fun and approachable. Knocked off one
+            star because the class was a bit crowded, but overall a great experience."
+          </p>
+          <p class="review-date">September 20, 2023</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <h3>Maria Garcia</h3>
+              <p class="workshop-type">Watercolor Painting</p>
+            </div>
+          </div>
+          <div class="rating">★★★★★</div>
+          <p class="review-text">
+            "Such a therapeutic experience! The instructor's passion for watercolor was contagious. Left feeling
+            inspired and with a beautiful piece of art. Highly recommend!"
+          </p>
+          <p class="review-date">September 15, 2023</p>
+        </div>
+      </section>
+      <section class="review-form-section">
+        <div class="container">
+          <h2>Share Your Experience</h2>
+          <form class="form-container">
+            <div class="input-group">
+              <label for="review-name">Name</label>
+              <input type="text" id="review-name" required />
+            </div>
+            <div class="input-group">
+              <label for="review-workshop">Workshop</label>
+              <select id="review-workshop" required>
+                <option value="" disabled selected>Select Workshop</option>
+                <option value="mosaic">Mosaic Art</option>
+                <option value="watercolor">Watercolor Painting</option>
+                <option value="canvas">Canvas Painting</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="review-rating">Rating</label>
+              <select id="review-rating" required>
+                <option value="5">★★★★★ (5 stars)</option>
+                <option value="4">★★★★☆ (4 stars)</option>
+                <option value="3">★★★☆☆ (3 stars)</option>
+                <option value="2">★★☆☆☆ (2 stars)</option>
+                <option value="1">★☆☆☆☆ (1 star)</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="review-text">Your Review</label>
+              <textarea id="review-text" rows="4" required></textarea>
+            </div>
+            <div class="submit-button-container">
+              <button type="submit" class="btn btn-primary">Submit Review</button>
+            </div>
+          </form>
+        </div>
+      </section>
     </main>
-
     <footer>
       <p>© Marius Christensen</p>
     </footer>
